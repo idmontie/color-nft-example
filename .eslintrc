@@ -1,0 +1,14 @@
+{
+    "extends": "react-app",
+    "env": {
+        "browser": true,
+        "mocha": true
+    },
+    "globals": {
+        "artifacts": true,
+        "contract": true
+    },
+    "rules": {
+        "no-unused-expressions": 0
+    }
+}
