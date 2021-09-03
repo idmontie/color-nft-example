@@ -2,10 +2,6 @@ const { expect } = require('chai');
 
 const Color = artifacts.require('./Color.sol');
 
-require('chai')
-    .use(require('chai-as-promised'))
-    .should();
-
 contract('Color', (accounts) => {
     let contract;
 
@@ -13,7 +9,7 @@ contract('Color', (accounts) => {
         contract = await Color.deployed();
     });
 
-    describe('deployment', async () => {
+    describe('deployment', () => {
         it('deploys successfully', async () => {
             const address = contract.address;
 

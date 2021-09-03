@@ -17,14 +17,22 @@ npm install -g truffle
 
 ### Migrations
 
+Deploy the contracts to your local ganache instance:
+
 ```terminal
 npm run nft:migrate
 ```
 
 ### Testing
 
-1. Start ganache
+Test all the contract functionality using mocha test runner with chai assertions:
 
 ```terminal
 npm run nft:test
+```
+
+### Running the web
+
+```terminal
+npm start
 ```

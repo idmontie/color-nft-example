@@ -45,7 +45,10 @@ module.exports = {
     development: {
       host: "127.0.0.1",
       port: 7545,
-      network_id: "*" // Match any network id
+      network_id: "*", // Match any network id
+      // gas: 0x1fffffffffffff,
+      // gas: 67000000,
+      // gasPrice: 20000000000,  // 20 gwei (in wei) (default: 100 gwei)
     },
     // Another network with more advanced options...
     // advanced: {
@@ -77,7 +80,12 @@ module.exports = {
   // Set default mocha options here, use special reporters etc.
   mocha: {
     // timeout: 100000
+    require: './test/common/setup.js'
   },
+
+  plugins: [
+    'truffle-contract-size'
+  ],
 
   // Configure your compilers
   compilers: {
@@ -86,10 +94,10 @@ module.exports = {
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       settings: {          // See the solidity docs for advice about optimization and evmVersion
         optimizer: {
-          enabled: false,
-          runs: 200
+          enabled: true,
+          runs: 1000
         },
-        evmVersion: "byzantium"
+        evmVersion: "istanbul"
       }
     }
   },
