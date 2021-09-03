@@ -9,8 +9,7 @@ contract Color is ERC721Enumerable {
     mapping(string => bool) _colorExists;
 
     constructor() ERC721("Color", "COLORS") {}
-
-    // TODO: only minter should be able to mint
+    
     // Create a new color given a color name
     function mint(string memory _color) public {
         // Require unique color

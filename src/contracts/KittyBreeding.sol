@@ -186,7 +186,6 @@ abstract contract KittyBreeding is KittyOwnership {
     /// @notice Checks to see if two cats can breed together, including checks for
     ///  ownership and siring approvals. Does NOT check that both cats are ready for
     ///  breeding (i.e. breedWith could still fail until the cooldowns are finished).
-    ///  TODO: Shouldn't this check pregnancy and cooldowns?!?
     /// @param _matronId The ID of the proposed matron.
     /// @param _sireId The ID of the proposed sire.
     function canBreedWith(uint256 _matronId, uint256 _sireId)
