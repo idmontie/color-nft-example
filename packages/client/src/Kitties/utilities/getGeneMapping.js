@@ -2,8 +2,8 @@ import getBase32Genes from "./getBase32Genes";
 
 const valueToExpression = {
     body: (value) => {
-        // TODO use a bitmask to determine the body type
         switch (value) {
+            case 3: // actually birman
             case 9:
                 return "cymric";
             case 10:
@@ -27,11 +27,7 @@ const valueToExpression = {
         }
     },
     pattern(value) {
-        // TODO use a bitmask to determine the pattern type
         switch (value) {
-            case 0b00110:
-            case 0b10111:
-                return "totesbasic";
             case 8:
                 return "calicool";
             case 10: // Actually amur
@@ -42,9 +38,14 @@ const valueToExpression = {
             case 12:
                 return "spock";
             case 20:
-                return "tigerpunk";
-            
-            default: // Using a nice default
+                return "tigerpunk";          
+            case 0b01111:
+            case 0b01110:
+            case 0b00110:
+            case 0b10111:
+                return "totesbasic";
+            default:
+                // Totesbasic is ACTUALLY the default when no other match is found
                 console.log('default pattern', value);
                 return "totesbasic";
         }
@@ -52,12 +53,14 @@ const valueToExpression = {
     eyeColor(value) {
         // TODO
         /*
-        gold
-        bubblegum
         limegreen
         chestnut
         */
         switch (value) {
+            case 0b10011:
+                return "bubblegum";
+            case 0b00001:
+                return "gold";
             case 0b00010:
                 return "topaz";
             case 0b00110:
@@ -76,7 +79,6 @@ const valueToExpression = {
     eye(value) {
         // TODO 
         /*
-            wingtips
             fabulous
             otaku
             raisedbrow
@@ -85,12 +87,16 @@ const valueToExpression = {
             googly
         */
         switch (value) {
+            case 0b10010:
+                return "fabulous";
             case 0b10011:
                 return "raisedbrow"; 
             case 0b00110:
                 return "crazy";
             case 0b00111:
                 return "thicccbrowz";
+            case 0b11001:
+                return "wingtips";
             default: // Using a nice default
                 console.log('default eyes', value);
                 return "simple";
@@ -105,6 +111,8 @@ const valueToExpression = {
             cottoncandy
         */
         switch (value) {
+            case 0b01001: // actually cinderella
+                return "aquamarine";
             case 0b00001:
                 return "salmon";
             case 0b00011:
@@ -125,13 +133,14 @@ const valueToExpression = {
         /*
             cerulian
             scarlet
-            royalpurple
             lemonade
             chocolate
             royalblue
             wolfgrey
         */
         switch (value) {
+            case 0b00110:
+                return "royalpurple";
             case 0b01000:
                 return "swampgreen";
             case 0b10110:
@@ -152,13 +161,14 @@ const valueToExpression = {
         /*
             peach
             emeraldgreen
-            kittencream
         */
         switch (value) {
             case 0b00100:
                 return "granitegrey";
             case 0b00110:
                 return "kittencream";
+            case 0b10001: // Actually flamingo
+                return "bloodred";
             case 0b01011:
             case 0b10011:
                 return "bloodred";
@@ -173,13 +183,13 @@ const valueToExpression = {
             whixtensions
             dali
             saycheese
-            
-            
-            happygokitty
             soserious
-            gerbil
         */
         switch (value) {
+            case 0b01100: // Actually fangtastic
+                return "whixtensions";
+            case 0b00011:
+                return "gerbil";
             case 0b10111:
                 return "tongue";
             case 0b01000:
