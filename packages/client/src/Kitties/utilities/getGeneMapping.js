@@ -56,16 +56,18 @@ const valueToExpression = {
         bubblegum
         limegreen
         chestnut
-        topaz
-        strawberry
         */
         switch (value) {
+            case 0b00010:
+                return "topaz";
             case 0b00110:
                 return "chestnut";
             case 0b00011:
                 return "mintgreen";
             case 0b00101:
                 return "sizzurp";
+            case 0b00111:
+                return "strawberry";
             default: // Using a nice default
                 console.log('default eyeColor', value);
                 return "topaz";
@@ -83,6 +85,8 @@ const valueToExpression = {
             googly
         */
         switch (value) {
+            case 0b10011:
+                return "raisedbrow"; 
             case 0b00110:
                 return "crazy";
             case 0b00111:
@@ -121,20 +125,23 @@ const valueToExpression = {
         /*
             cerulian
             scarlet
-            skyblue
-            coffee
             royalpurple
             lemonade
-            swampgreen
             chocolate
             royalblue
             wolfgrey
         */
         switch (value) {
+            case 0b01000:
+                return "swampgreen";
+            case 0b10110:
+                return "skyblue";
             case 0b01011:
                 return "barkbrown";
             case 0b01110:
                 return "chocolate";
+            case 0b01100:
+                return "coffee";
             default: // Using a nice default
                 console.log('default pattern color', value);
                 return "cottoncandy";
@@ -153,6 +160,7 @@ const valueToExpression = {
             case 0b00110:
                 return "kittencream";
             case 0b01011:
+            case 0b10011:
                 return "bloodred";
             default: // Using a nice default
                 console.log('default secondary color', value);
@@ -165,13 +173,17 @@ const valueToExpression = {
             whixtensions
             dali
             saycheese
-            beard
-            tongue
+            
+            
             happygokitty
             soserious
             gerbil
         */
         switch (value) {
+            case 0b10111:
+                return "tongue";
+            case 0b01000:
+                return "beard";
             case 0b01001:
                 return "pouty";
             case 0b01110:

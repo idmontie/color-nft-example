@@ -17,12 +17,13 @@ const TokenListContainer = ({ contract, refresh }) => {
 
             const max = Math.min(ts, 100);
 
-            for (let i = 0; i < max; i++) {
+            // I think kitties are 1-indexed
+            for (let i = 0; i <= max; i++) {
                 const token = await contract.methods.getKitty(i).call();
                 acc.push(token);
             }
 
-            setTokens(acc);
+            setTokens(acc.reverse());
         } catch (e) {
             setError(e.message);
         }
