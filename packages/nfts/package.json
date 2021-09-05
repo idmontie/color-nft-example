@@ -1,0 +1,26 @@
+{
+  "name": "@nft/nft",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Color NFT example",
+  "author": "idmontie@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.0.0",
+    "bs58": "^4.0.1",
+    "chai": "4.2.0",
+    "chai-as-promised": "7.1.1",
+    "truffle": "^5.3.0",
+    "truffle-contract-size": "^2.0.1",
+    "truffle-flattener": "^1.4.2"
+  },
+  "scripts": {
+    "test": "truffle test",
+    "compile": "truffle run contract-size; truffle compile",
+    "migrate": "npm run compile && truffle migrate --reset"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "chai-bn": "^0.3.0"
+  }
+}

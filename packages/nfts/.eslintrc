@@ -1,0 +1,21 @@
+{
+    "extends": "eslint:recommended",
+    "env": {
+        "node": true,
+        "es6": true,
+        "mocha": true,
+        "chai": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "parser": "babel-eslint",
+    "globals": {
+        "artifacts": true,
+        "contract": true
+    },
+    "rules": {
+        "no-unused-expressions": 0
+    }
+}
